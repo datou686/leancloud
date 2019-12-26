@@ -2,6 +2,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/cloud.php';
 
+//公众号保存
+preg_match('/MP_verify_(\w+).txt/', $_SERVER['REQUEST_URI'], $arr);
+if (isset($arr[1])) {
+    echo $arr[1];
+    exit();
+}
+
+
 /*
  * A simple Slim based sample application
  *
