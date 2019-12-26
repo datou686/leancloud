@@ -31,7 +31,7 @@ Client::initialize(
 Client::setStorage(new CookieStorage());
 Client::useProduction((getenv("LEANCLOUD_APP_ENV") === "production") ? true : false);
 
-SlimEngine::enableHttpsRedirect();
+//SlimEngine::enableHttpsRedirect();
 $app->add(new SlimEngine());
 
 // 使用 Slim/PHP-View 作为模版引擎
