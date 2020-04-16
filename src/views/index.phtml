@@ -17,7 +17,7 @@
                 jsonp: "callback",
                 jsonpCallback: "callback",
                 success: function(res) {
-                  queryparam = getCaption(res.domainname);
+                  queryparam = decodeURI(window.location.href.split('?')[1]);
                   
                   location.href = res.domainname + queryparam;
 
