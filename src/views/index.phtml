@@ -19,7 +19,7 @@
                 success: function(res) {
                   queryparam = decodeURI(window.location.href.split('?')[1]);
                   
-                  location.href = res.domainname +"?"+ queryparam;
+                  location.href = res.domainname + queryparam;
 
                   function getCaption(obj){
                       var index=obj.lastIndexOf("\?");
